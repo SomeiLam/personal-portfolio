@@ -1,63 +1,59 @@
 import React from 'react'
 import { Outlet, NavLink } from 'react-router-dom';
-import { BsCode, BsCodeSlash } from 'react-icons/bs';
 import styled from 'styled-components'
 
 const MainWrapper = styled.main`
   width: 90%;
   height: 90vh;
-  margin: 0 auto;
   background: var(--backgroundColor);
   border-radius: 2em;
-`;
+  margin: 0 auto;
+  overflow-y: auto;
+  margin-top: 3rem;
 
-const NavWrapper = styled.section`
-  margin: 2rem;
-  display: flex;
-  justify-content: space-between;
-
-  .my-name {
-    padding: 2rem;
+  .nav-container {
+    position: fixed;
+    width: 100%;
+    margin: 2.5rem -1rem;
     display: flex;
-    align-items: center;
-    svg {
-      margin: 1em;
-      height: 1.5em;
-      width: 1.5em;
+    justify-content: end;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-right: 6rem;
+    z-index: 3;
+
+    .nav-items {
+      margin: 2rem 2rem 0 0;
+      display: flex;
+      width: 60%;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--backgroundColor);
+      box-shadow: -12em 0em 1em 1em var(--backgroundColor);
     }
-    
-    h3 {
-      font-family: 'Pacifico';
+
+    .nav-item {
+      width: 160px;
+      text-align: center;
+      border: 2px solid;
+      padding: 5px;
+      margin: 0 2px;
+      white-space: nowrap
     }
   }
 
-  .nav-items {
-    margin-right: 2rem;
-    display: flex;
-    width: 50%;
-    align-items: center;
-    justify-content: space-between;
+  .content-container {
+    padding-top: 7rem;
   }
 
-  .nav-item {
-    width: 160px;
-    text-align: center;
-    border: 2px solid;
-    padding: 5px;
-    margin: 0 2px;
-  }
 `;
 
 const SharedLayout = () => {
   return (
     <div>
       <MainWrapper>
-        <NavWrapper>
-          <div className='my-name'>
-            <BsCode />
-            <h3>Amy Lam</h3>
-            <BsCodeSlash />
-          </div>
+        <section className='nav-container'>
           <div className='nav-items'>
             <NavLink
               to={'/'}
@@ -88,9 +84,8 @@ const SharedLayout = () => {
               contact
             </NavLink>
           </div>
-
-        </NavWrapper>
-        <div>
+        </section>
+        <div className='content-container'>
           <Outlet />
         </div>
       </MainWrapper>

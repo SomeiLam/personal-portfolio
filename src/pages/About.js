@@ -14,7 +14,6 @@ const Wrapper = styled.div`
       border-radius: 8rem;
     }
   }
-  
 `;
 
 const About = () => {
@@ -22,6 +21,9 @@ const About = () => {
     <Wrapper>
       <div className='avatar'>
         <img src='https://avatars.githubusercontent.com/u/86380144?v=4' alt='avatar' />
+      </div>
+      <div className='content'>
+
       </div>
     </Wrapper>
   );
