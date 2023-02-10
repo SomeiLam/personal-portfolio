@@ -1,5 +1,6 @@
 import React from 'react'
 import { Outlet, NavLink } from 'react-router-dom';
+import { BsCode, BsCodeSlash } from 'react-icons/bs';
 import styled from 'styled-components'
 
 const MainWrapper = styled.main`
@@ -15,8 +16,23 @@ const NavWrapper = styled.section`
   display: flex;
   justify-content: space-between;
 
+  .my-name {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    svg {
+      margin: 1em;
+      height: 1.5em;
+      width: 1.5em;
+    }
+    
+    h3 {
+      font-family: 'Pacifico';
+    }
+  }
+
   .nav-items {
-    margin: 2rem 2rem 0 0;
+    margin-right: 2rem;
     display: flex;
     width: 50%;
     align-items: center;
@@ -37,7 +53,11 @@ const SharedLayout = () => {
     <div>
       <MainWrapper>
         <NavWrapper>
-          <div className='blank'></div>
+          <div className='my-name'>
+            <BsCode />
+            <h3>Amy Lam</h3>
+            <BsCodeSlash />
+          </div>
           <div className='nav-items'>
             <NavLink
               to={'/'}
