@@ -30,7 +30,7 @@ const MainWrapper = styled.main`
       align-items: center;
       justify-content: space-between;
       background: var(--backgroundColor);
-      box-shadow: -12em 0em 1em 1em var(--backgroundColor);
+      box-shadow: -18em 0em 1em 1em var(--backgroundColor);
     }
 
     .nav-item {
