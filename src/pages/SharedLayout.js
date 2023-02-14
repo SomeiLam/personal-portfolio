@@ -3,13 +3,13 @@ import { Outlet, NavLink } from 'react-router-dom';
 import styled from 'styled-components'
 
 const MainWrapper = styled.main`
-  width: 90%;
-  height: 90vh;
+  width: 98%;
+  height: 95vh;
   background: var(--backgroundColor);
   border-radius: 2em;
   margin: 0 auto;
   overflow-y: auto;
-  margin-top: 3rem;
+  margin-top: 1.2rem;
 
   .nav-container {
     position: fixed;
@@ -34,12 +34,16 @@ const MainWrapper = styled.main`
     }
 
     .nav-item {
-      width: 160px;
+      width: 120px;
       text-align: center;
-      border: 2px solid;
       padding: 5px;
       margin: 0 2px;
       white-space: nowrap
+    }
+
+    .nav-item:hover, .nav-item:active, .nav-item.active {
+      border: 2px dotted;
+      border-radius: 1rem;
     }
   }
 
@@ -71,14 +75,14 @@ const SharedLayout = () => {
             </NavLink>
             <NavLink
               to={'/projects'}
-              key={2}
+              key={3}
               className='nav-item'
             >
               projects
             </NavLink>
             <NavLink
               to={'/contact'}
-              key={2}
+              key={4}
               className='nav-item'
             >
               contact

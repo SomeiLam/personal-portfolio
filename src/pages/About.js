@@ -23,7 +23,7 @@ const About = () => {
         <img src='https://avatars.githubusercontent.com/u/86380144?v=4' alt='avatar' />
       </div>
       <div className='content'>
-
+        <h3>About me</h3>
       </div>
     </Wrapper>
   );

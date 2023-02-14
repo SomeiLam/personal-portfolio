@@ -1,15 +1,48 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import SkillItem from '../components/SkillItem';
+import {
+  CSS,
+  ExpressJS,
+  Firebase,
+  Flutter,
+  Git,
+  GitHub,
+  Html,
+  JavaScript,
+  Jest,
+  MaterialUI,
+  MongoDB,
+  Node,
+  PostgreSQL,
+  Postman,
+  Python,
+  R,
+  ReactJS,
+  Redux,
+  TailwindCSS,
+  TypeScript,
+  Vercel,
+  VSCode,
+} from '../assets/icons';
 
 const Wrapper = styled.div`
   width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  
+  h3 {
+      font-family: 'Pacifico';
+  }
 
   .title-container {
     display: flex;
     margin: 0 auto;
+  }
+
+  .avatar {
+    align-self: center;
   }
 
   .my-name {
@@ -20,8 +53,7 @@ const Wrapper = styled.div`
       height: 1.5em;
       width: 1.5em;
     }
-     
-    h3, h5 {
+    h5 {
       font-family: 'Pacifico';
     }
   }
@@ -34,9 +66,24 @@ const Wrapper = styled.div`
     }
   }
 
+  .description {
+    p {
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
   .content {
-    width: 60%;
-    margin: 0 auto;
+    margin-top: 2rem;
+    .content-title {
+      border-bottom: 1px solid var(--night-blue);
+    }
+    .skills {
+      margin: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
   }
 `;
 
@@ -52,21 +99,39 @@ const Home = () => {
           <h5>Welcome to my portfolio website</h5>
         </div>
       </div>
-
-      <div className='content'>
+      <div className='description'>
         <p>
-          I'm a Frontend Web Developer who is passionate about building meaningful software.
-          Some technologies I enjoy working with include React and Redux using JavaScript.
-        </p>
-        <p>
-          Recently, I am interested about blockchain, NFTs, and cryptocurrency.
-        </p>
-        <p>
-          I am also self learning mobile development with Flutter, game development with Unreal Engine
-          and Ethereum Blockchain during my free time.
+          I'm a &#11088; Frontend Web Developer &#11088; who is passionate about building meaningful software.
         </p>
       </div>
-    </Wrapper>
+      <div className='content'>
+        <div className='content-title'>
+          <h3>My Skills</h3>
+        </div>
+        <div className='skills'>
+          <SkillItem icon={JavaScript} text='JavaScript' />
+          <SkillItem icon={TypeScript} text='TypeScript' />
+          <SkillItem icon={Html} text='HTML' />
+          <SkillItem icon={CSS} text='CSS' />
+          <SkillItem icon={ReactJS} text='ReactJS' />
+          <SkillItem icon={Redux} text='Redux' />
+          <SkillItem icon={Node} text='Node' />
+          <SkillItem icon={ExpressJS} text='ExpressJS' />
+          <SkillItem icon={MongoDB} text='MongoDB' />
+          <SkillItem icon={Git} text='Git' />
+          <SkillItem icon={GitHub} text='GitHub' />
+          <SkillItem icon={VSCode} text='VSCode' />
+          <SkillItem icon={Flutter} text='Flutter' />
+          <SkillItem icon={Python} text='Python' />
+          <SkillItem icon={R} text='R' />
+          <SkillItem icon={Firebase} text='Firebase' />
+          <SkillItem icon={MaterialUI} text='MaterialUI' />
+          <SkillItem icon={Postman} text='Postman' />
+          <SkillItem icon={TailwindCSS} text='TailwindCSS' />
+          <SkillItem icon={Jest} text='Jest' />
+        </div>
+      </div>
+    </Wrapper >
   );
 };
 

@@ -80,7 +80,6 @@ body {
 
 p {
   margin-bottom: 1.5rem;
-  max-width: 40em;
 }
 
 h1,
@@ -133,8 +132,7 @@ a {
 a:hover, a:active, a.active {
   color: var(--night-blue-shadow);
   font-weight: 600;
-  transition: 500ms;
-  background: var(--medium-purple);
+  transition: 300ms;
 }
 
 button {
