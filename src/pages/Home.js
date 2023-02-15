@@ -1,8 +1,14 @@
 import React from 'react';
+import { Collapse } from 'antd';
 import styled from 'styled-components';
-import SkillItem from '../components/SkillItem';
+import SkillSet from '../components/SkillSet';
 import {
+  Ant,
+  Bootstrap,
+  Chai,
   CSS,
+  Cypress,
+  Dart,
   ExpressJS,
   Firebase,
   Flutter,
@@ -12,6 +18,7 @@ import {
   JavaScript,
   Jest,
   MaterialUI,
+  Mocha,
   MongoDB,
   Node,
   PostgreSQL,
@@ -39,31 +46,26 @@ const Wrapper = styled.div`
   .title-container {
     display: flex;
     margin: 0 auto;
+    .my-name {
+      padding: 2rem;
+      align-items: center; 
+      svg {
+        margin: 1em;
+        height: 1.5em;
+        width: 1.5em;
+      }
+      h5 {
+        font-family: 'Pacifico';
+      }
   }
 
   .avatar {
     align-self: center;
-  }
-
-  .my-name {
-    padding: 2rem;
-    align-items: center; 
-    svg {
-      margin: 1em;
-      height: 1.5em;
-      width: 1.5em;
-    }
-    h5 {
-      font-family: 'Pacifico';
-    }
-  }
-
-  .avatar {
     img {
       width: 120px;
-      border: 10px var(--pink-leaf) double;
       border-radius: 5rem;
     }
+  }
   }
 
   .description {
@@ -78,14 +80,19 @@ const Wrapper = styled.div`
     .content-title {
       border-bottom: 1px solid var(--night-blue);
     }
-    .skills {
-      margin: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
+    .ant-collapse-header-text {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-transform: capitalize;
     }
+    .ant-collapse-arrow {
+        margin-top: .5rem;
+        font-size: 1.2rem !important;
+      }
   }
 `;
+
+const { Panel } = Collapse;
 
 const Home = () => {
   return (
@@ -108,28 +115,66 @@ const Home = () => {
         <div className='content-title'>
           <h3>My Skills</h3>
         </div>
-        <div className='skills'>
-          <SkillItem icon={JavaScript} text='JavaScript' />
-          <SkillItem icon={TypeScript} text='TypeScript' />
-          <SkillItem icon={Html} text='HTML' />
-          <SkillItem icon={CSS} text='CSS' />
-          <SkillItem icon={ReactJS} text='ReactJS' />
-          <SkillItem icon={Redux} text='Redux' />
-          <SkillItem icon={Node} text='Node' />
-          <SkillItem icon={ExpressJS} text='ExpressJS' />
-          <SkillItem icon={MongoDB} text='MongoDB' />
-          <SkillItem icon={Git} text='Git' />
-          <SkillItem icon={GitHub} text='GitHub' />
-          <SkillItem icon={VSCode} text='VSCode' />
-          <SkillItem icon={Flutter} text='Flutter' />
-          <SkillItem icon={Python} text='Python' />
-          <SkillItem icon={R} text='R' />
-          <SkillItem icon={Firebase} text='Firebase' />
-          <SkillItem icon={MaterialUI} text='MaterialUI' />
-          <SkillItem icon={Postman} text='Postman' />
-          <SkillItem icon={TailwindCSS} text='TailwindCSS' />
-          <SkillItem icon={Jest} text='Jest' />
-        </div>
+        <Collapse defaultActiveKey={['1', '2']} ghost>
+          <Panel className='skill-title' header='Web Frontend Development' key='1'>
+            <SkillSet
+              iconArray={[
+                { icon: JavaScript, text: 'JavaScript' },
+                { icon: TypeScript, text: 'TypeScript' },
+                { icon: Html, text: 'HTML' },
+                { icon: CSS, text: 'CSS' },
+                { icon: ReactJS, text: 'ReactJS' },
+                { icon: Redux, text: 'Redux' },
+                { icon: TailwindCSS, text: 'TailwindCSS' },
+                { icon: MaterialUI, text: 'MaterialUI' },
+                { icon: Ant, text: 'Ant' },
+                { icon: Bootstrap, text: 'Bootstrap' },
+              ]}
+            />
+          </Panel>
+          <Panel className='skill-title' header='Web Backend Development' key='2'>
+            <SkillSet
+              iconArray={[
+                { icon: Node, text: 'Node' },
+                { icon: ExpressJS, text: 'ExpressJS' },
+                { icon: MongoDB, text: 'MongoDB' },
+                { icon: Firebase, text: 'Firebase' },
+                { icon: PostgreSQL, text: 'PostgreSQL' },
+                { icon: Postman, text: 'Postman' },
+              ]}
+            />
+          </Panel>
+          <Panel className='skill-title' header='Testing Library' key='3'>
+            <SkillSet
+              iconArray={[
+                { icon: Jest, text: 'Jest' },
+                { icon: Cypress, text: 'Cypress' },
+                { icon: Chai, text: 'Chai' },
+                { icon: Mocha, text: 'Mocha' },
+              ]}
+            />
+          </Panel>
+          <Panel className='skill-title' header='Mobile Developmet' key='4'>
+            <SkillSet
+              iconArray={[
+                { icon: Dart, text: 'Dart' },
+                { icon: Flutter, text: 'Flutter' },
+              ]}
+            />
+          </Panel>
+          <Panel className='skill-title' header='Additional Skills' key='5'>
+            <SkillSet
+              iconArray={[
+                { icon: Python, text: 'Python' },
+                { icon: R, text: 'R' },
+                { icon: Git, text: 'Git' },
+                { icon: GitHub, text: 'GitHub' },
+                { icon: VSCode, text: 'VSCode' },
+                { icon: Vercel, text: 'Vercel' },
+              ]}
+            />
+          </Panel>
+        </Collapse>
       </div>
     </Wrapper >
   );

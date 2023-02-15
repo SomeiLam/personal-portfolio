@@ -3,34 +3,28 @@ import { Outlet, NavLink } from 'react-router-dom';
 import styled from 'styled-components'
 
 const MainWrapper = styled.main`
-  width: 98%;
-  height: 95vh;
-  background: var(--backgroundColor);
-  border-radius: 2em;
   margin: 0 auto;
-  overflow-y: auto;
-  margin-top: 1.2rem;
-
+	padding: 2rem;
+  .home {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
   .nav-container {
-    position: fixed;
+    position: sticky;
+    top: 0;
+    background-color: white;
     width: 100%;
-    margin: 2.5rem -1rem;
+    height: 3rem;
     display: flex;
     justify-content: end;
-    top: 0;
-    left: 0;
-    right: 0;
     padding-right: 6rem;
-    z-index: 3;
+    box-shadow: 0em 0em 1em 2em white;
 
     .nav-items {
-      margin: 2rem 2rem 0 0;
       display: flex;
-      width: 60%;
+      width: 50%;
       align-items: center;
       justify-content: space-between;
-      background: var(--backgroundColor);
-      box-shadow: -18em 0em 1em 1em var(--backgroundColor);
     }
 
     .nav-item {
@@ -48,16 +42,20 @@ const MainWrapper = styled.main`
   }
 
   .content-container {
-    padding-top: 7rem;
+    margin: 0 auto;
+    margin: 2.5rem 5rem;
+    padding: 2rem 0;
+    border: 10px var(--pink-leaf) double;
+    border-radius: 3em;
   }
 
 `;
 
 const SharedLayout = () => {
   return (
-    <div>
-      <MainWrapper>
-        <section className='nav-container'>
+    <MainWrapper>
+      <main className='home'>
+        <div className='nav-container'>
           <div className='nav-items'>
             <NavLink
               to={'/'}
@@ -88,12 +86,12 @@ const SharedLayout = () => {
               contact
             </NavLink>
           </div>
-        </section>
+        </div>
         <div className='content-container'>
           <Outlet />
         </div>
-      </MainWrapper>
-    </div>
+      </main>
+    </MainWrapper>
   )
 }
 

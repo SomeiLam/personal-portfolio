@@ -1,4 +1,9 @@
+import Ant from './Ant.svg';
+import Bootstrap from './Bootstrap.svg';
+import Chai from './Chai.svg';
 import CSS from './CSS.svg';
+import Cypress from './Cypress.svg';
+import Dart from './Dart.svg';
 import ExpressJS from './ExpressJS.svg';
 import Firebase from './Firebase.svg';
 import Flutter from './Flutter.svg';
@@ -8,6 +13,7 @@ import Html from './Html.svg';
 import JavaScript from './JavaScript.svg';
 import Jest from './Jest.svg';
 import MaterialUI from './MaterialUI.svg';
+import Mocha from './Mocha.svg';
 import MongoDB from './MongoDB.svg';
 import Node from './Node.svg';
 import PostgreSQL from './PostgreSQL.svg';
@@ -22,7 +28,12 @@ import Vercel from './Vercel.svg';
 import VSCode from './VSCode.svg';
 
 export {
+  Ant,
+  Bootstrap,
+  Chai,
   CSS,
+  Cypress,
+  Dart,
   ExpressJS,
   Firebase,
   Flutter,
@@ -32,6 +43,7 @@ export {
   JavaScript,
   Jest,
   MaterialUI,
+  Mocha,
   MongoDB,
   Node,
   PostgreSQL,

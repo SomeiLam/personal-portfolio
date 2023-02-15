@@ -5,12 +5,13 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem;
+  margin: 0 1rem;
   img {
-    width: 150px;
+    height: 100px;
   }
-  h5 {
-    font-weight: 500;
+  .skill-name {
+    margin: .5rem 0 1.5rem 0;
+    font-weight: 700;
     text-transform: capitalize;
   }
 `
@@ -19,9 +20,7 @@ const SkillItem = ({ icon, text }) => {
   return (
     <Wrapper>
       <img src={icon} alt={text} className='icon' />
-      <h5>
-        {text}
-      </h5>
+      <small className='skill-name'>{text}</small>
     </Wrapper >
   )
 };
