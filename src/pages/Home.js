@@ -39,42 +39,31 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   
-  h3 {
+  h1, h3 {
       font-family: 'Pacifico';
   }
 
   .title-container {
     display: flex;
+    width: 90%;
     margin: 0 auto;
-    .my-name {
-      padding: 2rem;
+    .avatar {
+      align-self: center;
+      img {
+        width: 200px;
+        border-radius: 10rem;
+      }
+    }
+    .my-description {
+      padding: 3rem 5rem;
       align-items: center; 
-      svg {
-        margin: 1em;
-        height: 1.5em;
-        width: 1.5em;
+      p {
+        font-weight: 600;
       }
-      h5 {
-        font-family: 'Pacifico';
-      }
-  }
-
-  .avatar {
-    align-self: center;
-    img {
-      width: 120px;
-      border-radius: 5rem;
     }
-  }
-  }
 
-  .description {
-    p {
-      text-align: center;
-      font-weight: 600;
-    }
   }
-
+  
   .content {
     margin-top: 2rem;
     .content-title {
@@ -101,19 +90,16 @@ const Home = () => {
         <div className='avatar'>
           <img src='https://avatars.githubusercontent.com/u/86380144?v=4' alt='avatar' />
         </div>
-        <div className='my-name'>
-          <h3>Hi &#129306;  I'm Amy Lam</h3>
-          <h5>Welcome to my portfolio website</h5>
+        <div className='my-description'>
+          <h1>Hi &#129306;  I'm Amy Lam</h1>
+          <p>
+            I'm a &#11088; Frontend Web Developer &#11088; who is passionate about building meaningful software.
+          </p>
         </div>
-      </div>
-      <div className='description'>
-        <p>
-          I'm a &#11088; Frontend Web Developer &#11088; who is passionate about building meaningful software.
-        </p>
       </div>
       <div className='content'>
         <div className='content-title'>
-          <h3>My Skills</h3>
+          <h3>My Skills 👩🏻‍💻</h3>
         </div>
         <Collapse defaultActiveKey={['1', '2']} ghost>
           <Panel className='skill-title' header='Web Frontend Development' key='1'>

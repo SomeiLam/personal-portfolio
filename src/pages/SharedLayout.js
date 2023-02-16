@@ -18,7 +18,8 @@ const MainWrapper = styled.main`
     display: flex;
     justify-content: end;
     padding-right: 6rem;
-    box-shadow: 0em 0em 1em 2em white;
+    background: var(--background-tan);
+    box-shadow: 0em 0em 1em 2em var(--background-tan);
 
     .nav-items {
       display: flex;
