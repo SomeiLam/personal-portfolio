@@ -37,7 +37,7 @@ const MainWrapper = styled.main`
     }
 
     .nav-item:hover, .nav-item:active, .nav-item.active {
-      border: 2px dotted;
+      border: 3px dotted;
       border-radius: 1rem;
     }
   }
